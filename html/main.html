@@ -1,0 +1,143 @@
+<html>
+<head>
+	<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/tip-yellow.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/boxy.css"/>
+	<script type="text/javascript" src="../js/jquery-2.0.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-migrate-1.1.0.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.poshytip.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.boxy.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/service.js"></script>
+	
+	<script type="text/javascript">  
+  	$(document).ready(function(){
+  		
+    	$(document).on("click","#report tr.node td:not(.choose)",function(){
+        $(this).parent().parent().nextUntil("tbody.control","tbody.sub").toggle();
+        $(this).parent().find(".close").toggleClass("open");
+     	});
+     	
+     	$(document).on("keyup","#filterName",function(){
+	      //$("#report tr.node")
+	     	$("#report tbody tr")
+					.hide()
+					.filter(":contains('"+( $(this).val() )+"')")
+					.show();
+
+					if($(this).val()!=""){
+						$("#report .sub").show();
+					}else{
+						$("#report .sub").hide();	
+					}
+	   	}).keyup();
+	   	
+    	$(document).on("click","#report img.cArrow",function(){
+        $(this).toggleClass("left");
+        $("#report div.csig").toggleClass("shrink");
+     	});
+    	$(document).on("click","#report img.bArrow",function(){
+        $(this).toggleClass("left");
+        $("#report div.bsig").toggleClass("shrink");
+     	});
+
+			$(document).on("click","#cAll",function(){
+				var Mmark;
+				if ($(this).attr("checked")=="checked")
+					{
+					Mmark=true;		
+					Smark=false;	
+					}
+				else
+					{
+					Mmark=false;
+					Smark=true;	
+					}
+				$(".node .choose>input").attr("checked",Smark);
+				$(".node .choose>input:visible").attr("checked",Mmark);
+			});
+
+			$(document).on("click","#sAll",function(){
+				var Mmark;
+				if ($(this).attr("checked")=="checked")
+					{
+					Mmark=true;	
+					}
+				else
+					{
+					Mmark=false;
+					}
+				$("#setting .fchoose>input").attr("checked",Mmark);
+			});			
+  	});
+  </script>   
+</head>
+
+<body style="overflow:auto;">
+	<div>
+		<div class="main-content">
+			<div class="tabs-content">
+				<div class="tab-content">
+					<table cellspacing="0" cellpadding="0">
+						<tr class="sub-tab-title contact-class" >
+							<td>
+								<label onclick="contactClassClick(this,'process-cap')" class="tc-select">进程抓包</label>
+								<label onclick="contactClassClick(this,'choose-file-list')">数据选择</label>
+								<label onclick="contactClassClick(this,'start-ana-list')">分析结果</label>
+								
+								<label>网卡：
+									<select id="nicName" style="width:250px"></select>
+									<select id="nicType">
+										<option value="0" selected>非混杂</option>
+										<option value="1">混杂</option>
+									</select>
+								</label>
+								
+								<label>节点排序：
+									<select id="sortName" onchange="sortNode($('#sortName option:selected').attr('value'),'start-ana-list')">
+										<option value="r" selected>速度大小</option>
+										<option value="fp">流量类型</option>
+										<option value="f">流量大小</option>
+										<option value="p">端口小大</option>
+										<option value="t">时间先后</option>
+										<option value="s">会话多少</option>
+									</select>
+								</label>
+								
+								<label>会话排序：
+									<select id="inSortName" onchange="sortSession($('#inSortName option:selected').attr('value'),'start-ana-list')">
+										<option value="r" selected>速度大小</option>
+										<option value="f">流量大小</option>
+										<option value="p">端口小大</option>
+										<option value="t">时间先后</option>
+										<option value="fp">报长类型</option>
+									</select>
+								</label>
+
+																
+								<label>筛选：<input id="filterName" style="width:180px" /></label>
+								<img src='../imgs/wa.png'  id='startcap'  			title="开始抓包"    onclick="wa('process-cap')" />
+								<img src='../imgs/addfile.png' id='addfile'   title="导入包文件"  onclick="addFiles()" />
+								<img src='../imgs/start.png'   id='ana'     	title="开始分析"    onclick="startAna('start-ana-list')" />
+
+							</td>
+						</tr>
+						<tr>
+							<td>
+									<div class="cl contact-list" id="process-cap"><ul class="scroll-load"></ul></div>
+								
+									<div class="cl contact-list" id="choose-file-list"><ul class="scroll-load"></ul></div>
+
+									<div class="cl contact-list" id="start-ana-list"><ul class="scroll-load"></ul></div>
+							</td>
+						</tr>
+
+					</table>		
+								
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
