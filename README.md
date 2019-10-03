@@ -13,7 +13,10 @@
 - http://www.l7dpi.com
 
 - QPA doc（WeChat Public Accounts）
-
+  - [Introduction Of QPA Software](https://mp.weixin.qq.com/s/84NBJLX69JS5PxXswvTj_w)
+  - [Environment Construction Of openQPA](https://mp.weixin.qq.com/s/rhYLKjDMeMCEPoLcclSQTg)
+  - [QPA User Manual](https://mp.weixin.qq.com/s/1tl2yH0jrd95RIcAIV1sDQ)
+  
 ![avatar](http://www.l7dpi.com/imgs/wx_l7dpi.png)
 
 - QPA communication（zsxq）
