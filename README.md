@@ -1,22 +1,22 @@
-**技术框架**  
+**Framework**  
 - C++/C--PYQT--JS/HTML/CSS
 
-**文件说明**  
-- QPA.py:程序入口，双击该文件将运行起程序
-- window.py:与js交互，界面将直接调用该文件里面的函数
-- dpcap.py:读取包文件，解析报文
-- analysis2.py:分析特征
-- calc.py:函数库
-- var.py:参数数据
+**Files introduce**  
+- QPA.py:Program entry, double clicking the file will run the program.
+- window.py:Interacting with js, the interface will directly call the functions in the file
+- dpcap.py:Read package files and parse messages
+- analysis2.py:Analysis characteristics
+- calc.py:function library
+- var.py:Parameter data
 
-**官网**  
+**Official website**  
 - http://www.l7dpi.com
 
-- QPA资料（微信公共号）
+- QPA doc（WeChat Public Accounts）
 
 ![avatar](http://www.l7dpi.com/imgs/wx_l7dpi.png)
 
-- QPA交流互动（知识星球）
+- QPA communication（zsxq）
 
 ![avatar](http://www.l7dpi.com/imgs/l7dpi_xq.png)
 
