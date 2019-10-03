@@ -9,8 +9,9 @@
 - calc.py:function library
 - var.py:Parameter data
 
-**Official website**  
-- http://www.l7dpi.com
+**More Info**  
+- Official website
+  - [l7dpi](http://www.l7dpi.com)
 
 - QPA doc（WeChat Public Accounts）
   - [Introduction Of QPA Software](https://mp.weixin.qq.com/s/84NBJLX69JS5PxXswvTj_w)
@@ -19,7 +20,8 @@
   
 ![avatar](http://www.l7dpi.com/imgs/wx_l7dpi.png)
 
-- QPA communication（zsxq）
-
+- QPA communication
+  - [zsxq](https://t.zsxq.com/IIUVbyN)
+  
 ![avatar](http://www.l7dpi.com/imgs/l7dpi_xq.png)
 
